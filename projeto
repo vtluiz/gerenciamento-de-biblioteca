@@ -1,0 +1,7 @@
+USE Biblioteca;
+
+SELECT A.Nome AS Autor, COUNT(E.LivroID) AS NumeroLivrosEmprestados
+FROM Autores A
+JOIN Livros L ON A.AutorID = L.AutorID
+JOIN Emprestimos E ON L.LivroID = E.LivroID
+GROUP BY A.Nome;
